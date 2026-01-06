@@ -1,0 +1,116 @@
+
+body {
+    background-color: #f2f2f2;
+}
+
+.bg-azul {
+    background-color: #334691;
+}
+
+.radius-20,
+.redondeado {
+    border-radius: 20px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.titulo-navbar {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.input-linea,
+.filtro-linea {
+    border: none;
+    border-bottom: 2px solid #334691;
+    border-radius: 0;
+    outline: none;
+}
+
+.filtro-linea:focus {
+    box-shadow: none;
+    border-bottom: 2px solid #2a3875;
+}
+
+.btn-agregar,
+.btn-crear {
+    background-color: #334691;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 6px 18px;
+    font-weight: 600;
+}
+
+.btn-agregar {
+    padding: 5px 15px;
+}
+
+.btn-crear:hover {
+    background-color: #2a3875;
+}
+
+.card-empleado {
+    background-color: #e6e6e6;
+    padding: 15px;
+    border-radius: 20px;
+    height: 100%;
+}
+.card-empleados {
+    background: #e0e0e0;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.panel-turnos {
+    background: #5b6bb3;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+}
+
+.mesa {
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mesa:hover {
+    transform: scale(1.05);
+}
+
+.mesa.ocupada {
+    background-color: #dc3545;
+    color: white;
+    cursor: not-allowed;
+}
+
+.mesa.seleccionada {
+    border: 3px solid #334691;
+    background-color: #cfe2ff;
+}
+
+.header-reservas {
+    color: black;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.header-reservas h4 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    margin-left: 120px;
+}
