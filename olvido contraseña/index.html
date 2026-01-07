@@ -38,14 +38,14 @@
                             <span></span>
 
                             <h5 class="fw-bold titulo-nav mb-0">
-                                INICIAR SESIÓN
+                                RECUPERAR CONTRASEÑA
                             </h5>
 
                             <!-- BOTON CERRAR -->
-                            <a href="../PaginaPrincipal/index.html" class="btn-close btn-close-white"></a>
+                            <a href="../inicio de sesion/index.html" class="btn-close btn-close-white"></a>
                         </div>
 
-                        <form id="inicioSesion">
+                        <form id="olvidoContraseña">
                             <!-- EMAIL -->
                             <label class="d-grid form-label text-white small">
                                 Email
@@ -53,30 +53,11 @@
                                 <span class="error" id="err-email"></span>
                             </label>
 
-                            <!-- CONTRASEÑA -->
-                            <label class="d-grid form-label text-white small mb-4">
-                                Contraseña
-                                <input type="password" class="form-control" id="contraseña" name="contraseña" required
-                                    minlength="2" />
-                                <span class="error" id="err-contraseña"></span>
-                            </label>
-
-                            <!-- BOTON INICIAR SESIÓN -->
+                            <!-- BOTON ENVIAR -->
                             <div class="d-grid mb-3">
-                                <button type="submit" class="btn btn-primary text-white">
-                                    Iniciar sesión
+                                <button type="submit" class="btn btn-primary text-white" id="btnEnviar">
+                                    Enviar
                                 </button>
-                            </div>
-
-                            <a href="../PaginaPrincipal/indexAdministrador.html"></a>
-
-                            <!-- OLVIDAR CONTRA Y REGISTRO -->
-                            <div class="text-center">
-                                <a href="../olvido contraseña/index.html"
-                                    class="text-white text-decoration-none small d-block mb-1">¿Olvidaste tu
-                                    contraseña?</a>
-                                <a href="../registro/index.html"
-                                    class="text-info text-decoration-none small">Regístrate</a>
                             </div>
                         </form>
                     </div>
@@ -85,11 +66,36 @@
         </div>
     </div>
 
+    <!-- MODAL CORREO ENVIADO -->
+    <div class="modal fade" id="modalEnviado" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="fs-5 fw-semibold">
+                        Por favor revise su correo electronico para restablecer su contraseña.
+                    </p>
+                </div>
+
+                <div class="modal-footer justify-content-center">
+                    <a href="../inicio de sesion/index.html" class="btn btn-primary">
+                        Continuar
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-    <script src="../inicio de sesion/codigo.js"></script>
+    <script src="../olvido contraseña/codigo.js"></script>
 
 </body>
 
