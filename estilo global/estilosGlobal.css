@@ -1,34 +1,98 @@
-/* * {
-    scroll-behavior: smooth;
-} */
-
+/* =========================
+   COLORES Y TIPOGRAFÍA
+========================= */
 .color-primario {
-    background-color: #334691;
+  background-color: #334691;
 }
 
 .titulo-nav {
-    color: #ffffff;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-shadow:
-        0 0 2px #c77dff,
-        0 0 6px #9d4edd,
-        0 0 12px #7b2cbf;
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  text-shadow:
+    0 0 2px #c77dff,
+    0 0 6px #9d4edd,
+    0 0 12px #7b2cbf;
 }
 
 .subtitulo {
-    color: #000000;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-shadow:
-        0 0 2px #c77dff,
-        0 0 6px #9d4edd,
-        0 0 12px #7b2cbf;
+  color: #000000;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 2px #c77dff,
+    0 0 6px #9d4edd,
+    0 0 12px #7b2cbf;
 }
 
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  min-height: 80px; /* mayor que el logo */
+}
+
+body {
+  padding-top: 80px; /* igual al navbar */
+}
+
+.navbar .d-flex {
+  align-items: center;
+}
+
+/* Logo del navbar */
+.logo-navbar {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+#sidebar {
+  position: fixed;
+  top: 80px; /* igual al navbar */
+  right: -260px;
+  width: 260px;
+  height: 100vh;
+  background-color: #cfd4e6;
+  transition: right 0.3s ease;
+  padding-top: 30px;
+  z-index: 999;
+}
+
+#sidebar.active {
+  right: 0;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  text-align: right;
+  padding: 12px 25px;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+  display: block;
+}
+
+/* =========================
+   CARDS / FORMULARIOS
+========================= */
 .estilo-card-formulario {
-    width: 100%; 
-    max-width: 400px; 
-    background-color: rgba(255, 255, 255, 0.1); 
-    border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
