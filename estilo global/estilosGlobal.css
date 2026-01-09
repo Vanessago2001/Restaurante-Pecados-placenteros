@@ -1,5 +1,5 @@
 /* =========================
-   COLORES Y TIPOGRAFÍA
+  COLORES Y TIPOGRAFÍA
 ========================= */
 .color-primario {
   background-color: #334691;
@@ -27,7 +27,7 @@
 }
 
 /* =========================
-   NAVBAR
+  NAVBAR
 ========================= */
 .navbar {
   min-height: 80px; /* mayor que el logo */
@@ -50,7 +50,7 @@ body {
 
 
 /* =========================
-   SIDEBAR
+  SIDEBAR
 ========================= */
 #sidebar {
   position: fixed;
@@ -88,7 +88,7 @@ body {
 }
 
 /* =========================
-   CARDS / FORMULARIOS
+  CARDS / FORMULARIOS
 ========================= */
 .estilo-card-formulario {
   width: 100%;
