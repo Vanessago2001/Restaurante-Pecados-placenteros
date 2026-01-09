@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empleados</title>
+    <link rel="icon" type="image/png" href="/img/fonfo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    
+    <nav class="navbar color-primario px-2 fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            
+            <div class="d-flex align-items-center">
+                <img src="../img/logo.png" class="logo-navbar me-2" alt="Logo">
+                <span class="titulo-nav fw-bold">PECADOS PLACENTEROS</span>
+            </div>
+
+            
+            <button class="btn text-white fs-3" id="btnMenu">☰</button>
+        </div>
+    </nav>
+
+   
+    <aside id="sidebar">
+        <ul>
+            <li><a href="#">PEDIDOS</a></li>
+            <li><a href="#">RESERVAS</a></li>
+            <li><a href="#">FACTURA POS</a></li>
+            <li><a href="#">GASTOS</a></li>
+            <li><a href="#">TURNOS</a></li>
+            <li><a href="#">INVENTARIO</a></li>
+            <li><a href="#">PERFIL</a></li>
+            <li><a href="#">INFORMES</a></li>
+            <li><a href="#">EMPLEADOS</a></li>
+        </ul>
+    </aside>
+    
+
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4>Empleados</h4>
+
+            <button class="btn btn-crear" data-bs-toggle="modal" data-bs-target="#modalEmpleado">
+                + CREAR
+            </button>
+        </div>
+
+
+
+
+        
+        <div class="bg-white p-3 mb-4 redondeado">
+
+            <h6 class="text-center mb-3 fw-bold">FILTRAR</h6>
+
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-2">
+                    <label class="form-label">NOMBRE:</label>
+                    <input type="text" class="form-control filtro-linea" placeholder="" onkeyup="filtrarEmpleados()"
+                        id="filtroNombre">
+                </div>
+
+                <div class="col-md-4 mb-2">
+                    <label class="form-label">CARGO:</label>
+                    <input type="text" class="form-control filtro-linea" id="filtroCargo" onkeyup="filtrarEmpleados()">
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row g-3" id="listaEmpleados">
+            
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="modalEmpleado">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content redondeado">
+
+                <div class="modal-header bg-azul text-white">
+                    <h5 class="modal-title">Agregar empleado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                            <label>Nombre</label>
+                            <input type="text" id="nombre" class="form-control">
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>CC</label>
+                            <input type="text" id="cc" class="form-control">
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>Cargo</label>
+                            <input type="text" id="cargo" class="form-control">
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>Correo</label>
+                            <input type="email" id="correo" class="form-control">
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label>Teléfono</label>
+                            <input type="text" id="telefono" class="form-control">
+                        </div>
+
+                        <div class="col-md-12 mb-2">
+                            <label>Dirección</label>
+                            <input type="text" id="direccion" class="form-control">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-crear" onclick="agregarEmpleado()">Guardar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="empleados/empleados.js"></script>
+    <script src="menu.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>
