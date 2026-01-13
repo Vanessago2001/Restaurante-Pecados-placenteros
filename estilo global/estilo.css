@@ -1,0 +1,91 @@
+body {
+  background-color: #f2f2f2;
+}
+
+/* =========================
+   LOGO Y TÍTULO DE ESTA PÁGINA
+========================= */
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.titulo-navbar {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   CARDS DE EMPLEADOS
+========================= */
+.card-empleado {
+  background-color: #e6e6e6;
+  padding: 15px;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.card-empleados {
+  background: #e0e0e0;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+/* =========================
+   PANEL DE TURNOS
+========================= */
+.panel-turnos {
+  background: #5b6bb3;
+  border-radius: 20px;
+  color: white;
+  padding: 20px;
+}
+
+/* =========================
+   MESAS DEL RESTAURANTE
+========================= */
+.mesa {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mesa:hover {
+  transform: scale(1.05);
+}
+
+.mesa.ocupada {
+  background-color: #dc3545;
+  color: white;
+  cursor: not-allowed;
+}
+
+.mesa.seleccionada {
+  border: 3px solid #334691;
+  background-color: #cfe2ff;
+}
+
+/* =========================
+   HEADER DE RESERVAS
+========================= */
+.header-reservas {
+  color: black;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.header-reservas h4 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  margin-left: 120px;
+}
