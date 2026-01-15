@@ -1,10 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: red;
-}
-
-
 /* =========================
   CAROUSSEL
 ========================= */
@@ -56,11 +49,11 @@ body {
   NAVBAR
 ========================= */
 .navbar {
-  min-height: 80px; /* mayor que el logo */
+  min-height: 80px;
 }
 
 body {
-  padding-top: 80px; /* igual al navbar */
+  padding-top: 80px;
 }
 
 .navbar .d-flex {
@@ -80,7 +73,7 @@ body {
 ========================= */
 #sidebar {
   position: fixed;
-  top: 80px; /* igual al navbar */
+  top: 79px;
   right: -260px;
   width: 260px;
   height: 100vh;
@@ -114,7 +107,50 @@ body {
 }
 
 /* =========================
-  CARDS / FORMULARIOS
+  ESTILOS GENERALES
+========================= */
+.radius-20,
+.redondeado {
+  border-radius: 20px;
+}
+
+.bg-azul {
+  background-color: #334691;
+}
+
+.input-linea,
+.filtro-linea {
+  border: none;
+  border-bottom: 2px solid #334691;
+  border-radius: 0;
+  outline: none;
+}
+
+.filtro-linea:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #2a3875;
+}
+
+.btn-agregar,
+.btn-crear {
+  background-color: #334691;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  padding: 6px 18px;
+  font-weight: 600;
+}
+
+.btn-agregar {
+  padding: 5px 15px;
+}
+
+.btn-crear:hover {
+  background-color: #2a3875;
+}
+
+/* =========================
+  CARDS GENERALES
 ========================= */
 .estilo-card-formulario {
   width: 100%;
