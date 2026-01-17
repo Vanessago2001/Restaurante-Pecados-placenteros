@@ -14,30 +14,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- CSS GLOBAL -->
-    <link rel="stylesheet" href="/estilo.css">
-    <link rel="stylesheet" href="/estilo global/estilosGlobal.css">
+    <link rel="stylesheet" href="../estilo-global/estilosGlobal.css">
+
+    <!-- CSS INTERNO -->
+    <link rel="stylesheet" href="../PaginaPrincipal/cliente.css">
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar color-primario px-3">
-        <div class="d-flex align-items-center">
+    <nav class="navbar color-primario px-2 sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
             <!-- Logo -->
-            <img src="/img/logo/logo.png" alt="Logo Pecados Placenteros" class="me-2 mb-2" width="110" height="auto">
+            <div class="d-flex align-items-center">
+                <img src="../img/logo.png" class="logo-navbar me-2" alt="Logo">
+                <span class="titulo-nav fw-bold">PECADOS PLACENTEROS</span>
+            </div>
 
-            <span class="titulo-nav fw-bold fs-3">PECADOS PLACENTEROS</span>
+            <!-- Botón menú -->
+            <button class="btn text-white fs-3" id="btnMenu">☰</button>
         </div>
-
-        <button id="btnMenu" class="btn text-white fs-3">
-            <i class="bi bi-list"></i>
-        </button>
-
     </nav>
 
-    <!-- Elementos delmenu desplegable
-    <div id="sidebar" class="sidebar">
-        <ul class="list-unstyled text-end p-4">
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+        <ul>
             <li><a href="#">PEDIDOS</a></li>
             <li><a href="#">RESERVAS</a></li>
             <li><a href="#">FACTURA POS</a></li>
@@ -48,34 +50,78 @@
             <li><a href="#">INFORMES</a></li>
             <li><a href="#">EMPLEADOS</a></li>
         </ul>
-    </div> -->
+    </aside>
 
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="container my-4">
 
         <!-- SECCIÓN CARRUSEL -->
         <section class="container-fluid mt-4">
-            <div class="overflow-hidden">
-                <div class="d-flex" id="carouselInfinito">
-                    <div class="px-2" style="min-width: 350px;">
-                        <img src="../img/logo.png" class="rounded w-100" alt="Producto 1">
+            <div id="carouselPrincipal" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+
+                    <!-- SLIDE 1 -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center gap-4">
+                            <div class="card-carousel">
+                                <img src="../img/carne-01.jpg" alt="#">
+                            </div>
+                            <div class="card-carousel">
+                                <img src="../img/perro-01.jpg" alt="#">
+                            </div>
+                            <div class="card-carousel">
+                                <img src="../img/picada-01.jpg" alt="#">
+                            </div>
+                        </div>
                     </div>
-                    <div class="px-2" style="min-width: 350px;">
-                        <img src="../img/logo.png" class="rounded w-100" alt="Producto 2">
+
+                    <!-- SLIDE 2 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-4">
+                            <div class="card-carousel">
+                                <img src="../img/postre-01.jpg" alt="#">
+                            </div>
+                            <div class="card-carousel">
+                                <img src="../img/pizza-01.jpg" alt="#">
+                            </div>
+                            <div class="card-carousel">
+                                <img src="../img/salchipapa-01.avif" alt="#">
+                            </div>
+                        </div>
                     </div>
-                    <div class="px-2" style="min-width: 350px;">
-                        <img src="../img/logo.png" class="rounded w-100" alt="Producto 3">
+
+                    <!-- SLIDE 3 -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-4">
+                            <div class="card-carousel">
+                                <img src="../img/hamburguesa-03.png" alt="#">
+                            </div>
+                            <div class="card-carousel">
+                                <img src="../img/bebida-04.jpg" alt="#">
+                            </div>
+                            <div class="card-carousel">
+                                <img src="../img/picada-04.jpg" alt="#">
+                            </div>
+                        </div>
                     </div>
-                    <div class="px-2" style="min-width: 350px;">
-                        <img src="../img/logo.png" class="rounded w-100" alt="Producto 4">
-                    </div>
-                    <div class="px-2" style="min-width: 350px;">
-                        <img src="../img/logo.png" class="rounded w-100" alt="Producto 5">
-                    </div>
-                    <div class="px-2" style="min-width: 350px;">
-                        <img src="../img/logo.png" class="rounded w-100" alt="Producto 6">
-                    </div>
+
                 </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrincipal"
+                    data-bs-slide="prev">
+
+                    <span class="d-flex align-items-center justify-content-center rounded-circle color-primario" style="width:48px; height:48px;">
+                        <span class="carousel-control-prev-icon"></span>
+                    </span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPrincipal"
+                    data-bs-slide="next">
+
+                    <span class="d-flex align-items-center justify-content-center rounded-circle color-primario" style="width:48px; height:48px;">
+                        <span class="carousel-control-next-icon"></span>
+                    </span>
+                </button>
             </div>
         </section>
 
@@ -91,17 +137,46 @@
                 <a href="#promociones" class="color-primario rounded-pill px-5 py-3 text-white text-decoration-none">
                     PROMOCIONES
                 </a>
-                <a href="#" class="color-primario rounded-pill px-5 py-3 text-white text-decoration-none">
+                <a href="../catalogo/index.html"
+                    class="color-primario rounded-pill px-5 py-3 text-white text-decoration-none">
                     CATÁLOGO
                 </a>
             </div>
         </section>
 
         <!-- SECCIÓN LO MÁS PEDIDO -->
-<section id="lo-mas-pedido" class="container my-5">
-    <h2 class="text-center fw-bold mb-4 subtitulo">Lo más pedido</h2>
-    <div class="row g-3" id="contenedorHamburguesas"></div>
-</section>
+        <section id="lo-mas-pedido" class="container my-5">
+            <h2 class="text-center fw-bold mb-4 subtitulo">Lo más pedido</h2>
+
+            <div class="row g-3">
+                <div class="col-6 col-md-4">
+                    <div class="card">
+                        <img src="../img/hamburguesa-04.avif" alt="Producto" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Producto 1</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <div class="card">
+                        <img src="../img/bebida-03.png" alt="Producto" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Producto 2</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <div class="card">
+                        <img src="../img/salchipapa-04.jpg" alt="Producto" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Producto 3</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <!-- SECCIÓN PROMOCIONES -->
@@ -111,16 +186,16 @@
             <div class="row g-3">
                 <div class="col-12 col-md-6">
                     <div class="card">
-                        <img src="../img/logo.png" alt="Promo">
+                        <img src="../img/promocion-01.jpg" alt="Promo">
                         <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Promo 2x1</h5>
+                            <h5 class="card-title fw-bold">Jueves de Pomociones</h5>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <div class="card">
-                        <img src="../img/logo.png" alt="Promo">
+                        <img src="../img/promocion-02.jpg" alt="Promo">
                         <div class="card-body text-center">
                             <h5 class="card-title fw-bold">Descuento especial</h5>
                         </div>
@@ -160,14 +235,15 @@
         </div>
     </div>
 
-    <script src="/estilo global/productos.js"></script>
-<script src="/PaginaPrincipal/principal.js"></script>
-<script src="/PaginaPrincipal/codigoEmpleado.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
+    <script src="../PaginaPrincipal/codigoEmpleado.js"></script>
+
+    <script src="../estilo-global/productos.js"></script>
+
+    <script src="../estilo-global/menu.js"></script>
 
 </body>
 

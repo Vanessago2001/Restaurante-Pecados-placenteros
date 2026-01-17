@@ -1,0 +1,9 @@
+.card-img-top {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center;
+}
+.card {
+    height: 450px; /* altura total aproximada de la card */
+}

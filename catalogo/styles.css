@@ -1,0 +1,26 @@
+/* LINKS */
+.categoria-link {
+    color: #000;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.3s;
+}
+
+/* HOVER */
+.categoria-link:hover {
+    color: #334691;
+}
+
+/* ACTIVO (Todavia no sirve) */
+/* .categoria-link.active {
+    color: ;
+} */
+
+.color-primario-catalogo {
+    background-color: #334691;
+}
+
+.color-primario-catalogo:hover {
+    background-color: #2140be;
+}

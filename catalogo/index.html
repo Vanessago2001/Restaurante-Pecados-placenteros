@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pecados Placenteros</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- ICONOS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="../estilo-global/estilosGlobal.css">
+
+    <!-- CSS INTERNO -->
+    <link rel="stylesheet" href="../catalogo/styles.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar color-primario px-2">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            <!-- Logo -->
+            <div class="d-flex align-items-center">
+                <img src="../img/logo.png" class="logo-navbar me-2" alt="Logo">
+                <span class="titulo-nav fw-bold">PECADOS PLACENTEROS</span>
+            </div>
+
+            <!-- Botón menú -->
+            <button class="btn text-white fs-3" id="btnMenu">☰</button>
+        </div>
+    </nav>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+        <ul>
+            <li><a href="../PaginaPrincipal/indexCliente.html">PAGINA PRINCIPAL</a></li>
+            <li><a href="../catalogo/index.html">CATALOGO</a></li>
+            <!-- <li><a href="#">FACTURA POS</a></li>
+            <li><a href="#">GASTOS</a></li>
+            <li><a href="#">TURNOS</a></li>
+            <li><a href="#">INVENTARIO</a></li>
+            <li><a href="#">PERFIL</a></li>
+            <li><a href="#">INFORMES</a></li>
+            <li><a href="#">EMPLEADOS</a></li> -->
+        </ul>
+    </aside>
+
+    <!-- SUBNAVBAR -->
+    <nav id="subNavbar" class="bg-white border-bottom sticky-top">
+        <ul class="nav gap-4 px-3 py-2" id="menuCategorias">
+            <li class="nav-item">
+                <a class="nav-link categoria-link active" href="#hamburguesas">HAMBURGUESAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#perros">PERROS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#pizzas">PIZZAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#bebidas">BEBIDAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#postres">POSTRES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#picadas">PICADAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#carnes">CARNES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categoria-link" href="#salchipapas">SALCHIPAPAS</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="containe my-4">
+
+        <section id="hamburguesas" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Hamburguesas</h2>
+                <div class="row g-4" id="contenedor-hamburguesas"></div>
+            </div>
+        </section>
+
+        <section id="perros" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Perros Calientes</h2>
+                <div class="row g-4" id="contenedor-perros"></div>
+            </div>
+        </section>
+
+        <section id="pizzas" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Pizzas</h2>
+                <div class="row g-4" id="contenedor-pizzas"></div>
+            </div>
+        </section>
+
+        <section id="bebidas" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Bebidas</h2>
+                <div class="row g-4" id="contenedor-bebidas"></div>
+            </div>
+        </section>
+
+        <section id="postres" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Postres</h2>
+                <div class="row g-4" id="contenedor-postres"></div>
+            </div>
+        </section>
+
+        <section id="picadas" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Picadas</h2>
+                <div class="row g-4" id="contenedor-picadas"></div>
+            </div>
+        </section>
+
+        <section id="carnes" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Carnes</h2>
+                <div class="row g-4" id="contenedor-carnes"></div>
+            </div>
+        </section>
+
+        <section id="salchipapas" class="container-fluid my-5 px-5">
+            <div class="card border-0 shadow-lg rounded-4 p-4">
+                <h2 class="fw-bold mb-4">Salchipapas</h2>
+                <div class="row g-4" id="contenedor-salchipapas"></div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- MODAL PRODUCTO -->
+    <div class="modal fade" id="modalProducto" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content rounded-4">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="modalProductoTitulo"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row g-4">
+
+                        <!-- IMAGEN -->
+                        <div class="col-md-6 text-center">
+                            <img id="modalProductoImagen" class="img-fluid rounded-4"
+                                style="max-height: 350px; object-fit: contain;">
+                        </div>
+
+                        <!-- DESCRIPCION -->
+                        <div class="col-md-6">
+                            <p class="fs-4 fw-bold" id="modalProductoPrecio"></p>
+                            <p class="text-muted" id="modalProductoDescripcion"></p>
+
+                            <!-- OPCIONES -->
+                            <div id="modalOpciones" class="mt-4">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button class="btn btn-outline-danger rounded-pill" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button class="btn rounded-pill px-4 color-primario-catalogo text-white">
+                        Agregar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="../estilo-global/productos.js"></script>
+
+    <script src="../catalogo/catalogo.js"></script>
+
+    <script src="../estilo-global/menu.js"></script>
+    <script src="../img/hamburguesa-01.jpg"></script>
+
+</body>
+
+</h
