@@ -73,7 +73,7 @@ body {
 ========================= */
 #sidebar {
   position: fixed;
-  top: 79px;
+  top: 80px;
   right: -260px;
   width: 260px;
   height: 100vh;
@@ -174,4 +174,20 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center;
+}
+.card {
+    height: auto; /* altura total aproximada de la card */
+    min-height: 40px;
+}
+
+section {
+  padding-top: 50px;
+  margin-top: -50px;
 }
