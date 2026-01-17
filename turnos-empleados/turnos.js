@@ -27,7 +27,7 @@ function mostrarEmpleados(listaMostrar) {
                     </div>
 
                     <button class="btn-agregar"
-                        onclick="abrirModal('${emp.nombre}')">
+                        onclick="abrirModal("${emp.nombre}")">
                         + AGREGAR
                     </button>
                 </div>
