@@ -65,7 +65,7 @@ function confirmarReserva() {
 
 function cargarMesasDisponibles() {
     const select = document.getElementById("mesaSelect");
-    select.innerHTML = '<option value="">Seleccione una mesa</option>';
+    select.innerHTML = "<option value="">Seleccione una mesa</option>";
 
     mesas.forEach(mesa => {
         if (mesa.estado === "disponible") {
