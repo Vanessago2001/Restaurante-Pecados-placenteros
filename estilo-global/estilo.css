@@ -3,7 +3,7 @@ body {
 }
 
 /* =========================
-   LOGO Y TÍTULO DE ESTA PÁGINA
+  LOGO Y TÍTULO DE ESTA PÁGINA
 ========================= */
 .logo {
   height: 60px;
@@ -18,7 +18,7 @@ body {
 }
 
 /* =========================
-   CARDS DE EMPLEADOS
+  CARDS DE EMPLEADOS
 ========================= */
 .card-empleado {
   background-color: #e6e6e6;
@@ -34,7 +34,7 @@ body {
 }
 
 /* =========================
-   PANEL DE TURNOS
+  PANEL DE TURNOS
 ========================= */
 .panel-turnos {
   background: #5b6bb3;
@@ -44,7 +44,7 @@ body {
 }
 
 /* =========================
-   MESAS DEL RESTAURANTE
+  MESAS DEL RESTAURANTE
 ========================= */
 .mesa {
   border: 2px solid #333;
@@ -71,7 +71,7 @@ body {
 }
 
 /* =========================
-   HEADER DE RESERVAS
+  HEADER DE RESERVAS
 ========================= */
 .header-reservas {
   color: black;

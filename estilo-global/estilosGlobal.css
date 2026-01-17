@@ -1,5 +1,24 @@
 /* =========================
-   COLORES Y TIPOGRAFÍA
+  CAROUSSEL
+========================= */
+
+.card-carousel {
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #111;
+}
+
+.card-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+  COLORES Y TIPOGRAFÍA
 ========================= */
 .color-primario {
   background-color: #334691;
@@ -27,7 +46,7 @@
 }
 
 /* =========================
-   NAVBAR
+  NAVBAR
 ========================= */
 .navbar {
   min-height: 80px;
@@ -41,18 +60,20 @@ body {
   align-items: center;
 }
 
+/* Logo del navbar */
 .logo-navbar {
   height: 70px;
   width: auto;
   display: block;
 }
 
+
 /* =========================
-   SIDEBAR
+  SIDEBAR
 ========================= */
 #sidebar {
   position: fixed;
-  top: 80px;
+  top: 79px;
   right: -260px;
   width: 260px;
   height: 100vh;
@@ -86,7 +107,7 @@ body {
 }
 
 /* =========================
-   ESTILOS GENERALES
+  ESTILOS GENERALES
 ========================= */
 .radius-20,
 .redondeado {
@@ -129,7 +150,7 @@ body {
 }
 
 /* =========================
-   CARDS GENERALES
+  CARDS GENERALES
 ========================= */
 .estilo-card-formulario {
   width: 100%;
