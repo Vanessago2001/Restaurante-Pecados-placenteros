@@ -1,5 +1,6 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const totalCarritoEl = document.getElementById("totalCarrito");
+const listaCarritoEl = document.getElementById("listaCarrito");
 
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -8,8 +9,8 @@ function guardarCarrito() {
 function agregarAlCarrito(producto, opcionesSeleccionadas) {
 
     const existente = carrito.find(item =>
-        item.id === producto.id &&
-        JSON.stringify(item.opciones) === JSON.stringify(opcionesSeleccionadas)
+    item.id === producto.id &&
+    JSON.stringify(item.opciones || null) === JSON.stringify(opcionesSeleccionadas || null)
     );
 
     if (existente) {
@@ -32,10 +33,11 @@ function agregarAlCarrito(producto, opcionesSeleccionadas) {
 
 
 function carritoMostrar() {
-    listaCarrito.innerHTML = "";
+
+    listaCarritoEl.innerHTML = '';
 
     if (carrito.length === 0) {
-        listaCarrito.innerHTML = `
+        listaCarritoEl.innerHTML = `
             <p class="text-muted text-center">
                 Tu carrito está vacío
             </p>
@@ -98,7 +100,7 @@ function carritoMostrar() {
         card.querySelector(".btn-eliminar")
             .addEventListener("click", () => eliminarProducto(index));
 
-        listaCarrito.appendChild(card);
+        listaCarritoEl.appendChild(card);
     });
 
     // SUMA TOTAL
@@ -111,8 +113,7 @@ function mostrarOpciones(opciones) {
     if (!opciones) return "";
 
     // MOSTRAR OPCIONES (ayuda)
-    if (typeof opciones === "object") {
-        return `
+    return `
             <ul class="small text-muted mb-0">
                 ${Object.entries(opciones).map(([key, values]) => `
                     <li>
@@ -120,10 +121,8 @@ function mostrarOpciones(opciones) {
                     </li>
                 `).join("")}
             </ul>
-        `;
-    }
-
-    return "";
+    `;
+    
 }
 
 /* CANTIDAD */
@@ -160,3 +159,4 @@ function guardarCarrito() {
 
 /* INICIAR */
 document.addEventListener("DOMContentLoaded", carritoMostrar);
+

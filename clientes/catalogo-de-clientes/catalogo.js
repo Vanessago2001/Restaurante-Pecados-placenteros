@@ -158,16 +158,24 @@ function crearSeccionOpciones(titulo, opciones, tipo = "checkbox") {
 }
 
 
+// AGREGA AL CARRITO (BOTON "ayuda")
+//NO TOCAR
 document.addEventListener("click", function (e) {
 
     const card = e.target.closest(".producto-card");
     if (!card) return;
 
-    // EVITA BOTON "Agregar" ABRA EL MODAL
-    if (e.target.tagName === "BUTTON") return;
-
     const idProducto = card.dataset.id;
     const producto = buscarProductoPorId(idProducto);
+
+    // EVITA BOTON "Agregar" ABRA EL MODAL
+    if (e.target.tagName === "BUTTON") {
+        agregarAlCarrito(producto, null);
+
+        alert("Producto agregado al carrito");
+
+        return
+    };
 
     abrirModalProducto(producto);
 });
@@ -195,7 +203,10 @@ document.getElementById("btnAgregarCarrito").addEventListener("click", () => {
 
     const opcionesSeleccionadas = obtenerOpcionesSeleccionadas();
 
-    agregarAlCarrito(productoActual, opcionesSeleccionadas);
+    agregarAlCarrito(
+    productoActual,
+    Object.keys(opcionesSeleccionadas).length ? opcionesSeleccionadas : null
+    );
 
     // CIERRA MODAL (ayuda)
     bootstrap.Modal.getInstance(
