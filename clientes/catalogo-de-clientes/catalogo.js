@@ -167,7 +167,6 @@ document.addEventListener("click", function (e) {
     if (e.target.tagName === "BUTTON") return;
 
     const idProducto = card.dataset.id;
-
     const producto = buscarProductoPorId(idProducto);
 
     abrirModalProducto(producto);
