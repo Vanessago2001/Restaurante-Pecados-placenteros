@@ -1,26 +1,18 @@
 /* =========================
-  CAROUSSEL
+   RESET Y BODY
 ========================= */
-
-.card-carousel {
-    width: 200px;
-    height: 300px;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #111;
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  padding-top: 0;
 }
-
-.card-carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 /* =========================
-  COLORES Y TIPOGRAFÍA
+   COLORES Y TIPOGRAFÍA
 ========================= */
-.color-primario {
+.color-primario,
+.bg-azul {
   background-color: #334691;
 }
 
@@ -46,41 +38,52 @@
 }
 
 /* =========================
-  NAVBAR
+   NAVBAR
 ========================= */
 .navbar {
-  min-height: 80px;
-}
-
-body {
-  padding-top: 80px;
+  z-index: 1030;
 }
 
 .navbar .d-flex {
   align-items: center;
 }
 
-/* Logo del navbar */
+#subNavbar {
+  z-index: 1020;
+}
+
+/* Logo navbar */
 .logo-navbar {
   height: 70px;
   width: auto;
   display: block;
 }
 
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.titulo-navbar {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 
 /* =========================
-  SIDEBAR
+   SIDEBAR
 ========================= */
 #sidebar {
   position: fixed;
   top: 80px;
   right: -260px;
   width: 260px;
-  height: 100vh;
+  height: calc(100vh - 80px);
   background-color: #cfd4e6;
   transition: right 0.3s ease;
   padding-top: 30px;
-  z-index: 999;
+  z-index: 1050;
 }
 
 #sidebar.active {
@@ -107,17 +110,32 @@ body {
 }
 
 /* =========================
-  ESTILOS GENERALES
+   BOTONES
 ========================= */
-.radius-20,
-.redondeado {
-  border-radius: 20px;
-}
-
-.bg-azul {
+.btn-agregar,
+.btn-crear {
   background-color: #334691;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
 }
 
+.btn-agregar {
+  padding: 5px 15px;
+}
+
+.btn-crear {
+  padding: 6px 18px;
+}
+
+.btn-crear:hover {
+  background-color: #2a3875;
+}
+
+/* =========================
+   INPUTS
+========================= */
 .input-linea,
 .filtro-linea {
   border: none;
@@ -131,63 +149,21 @@ body {
   border-bottom: 2px solid #2a3875;
 }
 
-.btn-agregar,
-.btn-crear {
-  background-color: #334691;
-  color: white;
+/* =========================
+   BORDES Y UTILIDADES
+========================= */
+.radius-20,
+.redondeado {
   border-radius: 20px;
-  border: none;
-  padding: 6px 18px;
-  font-weight: 600;
-}
-
-.btn-agregar {
-  padding: 5px 15px;
-}
-
-.btn-crear:hover {
-  background-color: #2a3875;
-}
-
-/* =========================
-  CARDS GENERALES
-========================= */
-.estilo-card-formulario {
-  width: 100%;
-  max-width: 400px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-
-/* =========================
-  CARDS CAROUSEL
-========================= */
-.card-carousel {
-    width: 280px;
-    height: 180px;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.card-carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card-img-top {
-    width: 100%;
-    height: 390px;
-    object-fit: cover;
-    object-position: center;
-}
-.card {
-    height: auto; /* altura total aproximada de la card */
-    min-height: 40px;
 }
 
 section {
   padding-top: 50px;
   margin-top: -50px;
+}
+
+footer{
+
+  background-color: #cfd4e6;
+
 }

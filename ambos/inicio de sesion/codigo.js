@@ -47,13 +47,13 @@ form.addEventListener('submit', (e) => {
 
         // ROLES
         if (email === 'empleado@gmail.com' && contraseña === '1234') {
-            window.location.href = '../PaginaPrincipal/indexEmpleado.html';
+            window.location.href = '/empleados-y-administrativos/PaginaPrincipal/principal.html';
         }
         else if (email === 'administrador@gmail.com' && contraseña === '1234') {
-            window.location.href = '../PaginaPrincipal/indexAdministrador.html';
+            window.location.href = '/empleados-y-administrativos/PaginaPrincipal/principal.html';
         }
         else if (email === 'cliente@gmail.com' && contraseña === '1234') {
-            window.location.href = '../PaginaPrincipal/indexCliente.html';
+            window.location.href = '/clientes/PaginaPrincipal/clientes-Principal.html';
         }
         else {
             alert('Usuario no existe');

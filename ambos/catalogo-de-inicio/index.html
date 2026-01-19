@@ -29,30 +29,21 @@
         <div class="container-fluid d-flex justify-content-between align-items-center">
 
             <!-- Logo -->
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center"> 
+                <a href="/ambos/inicioprincipal.html">
                 <img src="/img/logo/logo.png" class="logo-navbar me-2" alt="Logo">
+            </a>
                 <span class="titulo-nav fw-bold">PECADOS PLACENTEROS</span>
             </div>
 
-            <!-- Botón menú -->
-            <button class="btn text-white fs-3" id="btnMenu">☰</button>
+            <!-- Botón inicio de sesion -->
+            <a href="#" class="text-white text-decoration-none d-block me-2" data-bs-toggle="modal"
+                data-bs-target="#modalUsuario">
+                <i class="bi bi-person-circle fs-2"></i>
+            </a>
+
         </div>
     </nav>
-
-    <!-- SIDEBAR -->
-    <aside id="sidebar">
-        <ul>
-            <li><a href="/clientes/PaginaPrincipal/clientes-Principal.html">PAGINA PRINCIPAL</a></li>
-            <li><a href="../catalogo/index.html">CATALOGO</a></li>
-            <!-- <li><a href="#">FACTURA POS</a></li>
-            <li><a href="#">GASTOS</a></li>
-            <li><a href="#">TURNOS</a></li>
-            <li><a href="#">INVENTARIO</a></li>
-            <li><a href="#">PERFIL</a></li>
-            <li><a href="#">INFORMES</a></li>
-            <li><a href="#">EMPLEADOS</a></li> -->
-        </ul>
-    </aside>
 
     <!-- SUBNAVBAR -->
     <nav id="subNavbar" class="bg-white border-bottom sticky-top">
@@ -88,7 +79,7 @@
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="containe my-4">
 
-        <section id="hamburguesas" class="container-fluid my-5 px-5" >
+        <section id="hamburguesas" class="container-fluid my-5 px-5">
             <div class="card border-0 shadow-lg rounded-4 p-4">
                 <h2 class="fw-bold mb-4">Hamburguesas</h2>
                 <div class="row g-4" id="contenedor-hamburguesas"></div>
@@ -184,14 +175,45 @@
                     <button class="btn btn-outline-danger rounded-pill" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button class="btn rounded-pill px-4 color-primario-catalogo text-white">
+                    <button id="btnAgregarProducto" class="btn rounded-pill px-4 color-primario-catalogo text-white">
                         Agregar
                     </button>
+
+
                 </div>
 
             </div>
         </div>
     </div>
+
+    <!-- MODAL USUARIO -->
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3 class="modal-title fw-bold">Bienvenido</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p class="mb-4 fs-5 fw-semibold">Accede a tu cuenta o crea una nueva</p>
+
+                    <div class="d-grid gap-3">
+                        <a href="../inicio de sesion/index.html" class="btn btn-primary color-primario">
+                            Iniciar sesión
+                        </a>
+
+                        <a href="../registro/index.html" class="btn btn-outline-primary">
+                            Registrarse
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -206,5 +228,5 @@
     <script src="/estilo-global/menu.js"></script>
 
 </body>
- 
-</head>
+
+</html>

@@ -23,29 +23,23 @@
 <body>
 
     <!-- NAVBAR -->
-     <nav class="navbar color-primario px-2 fixed-top">
+    <nav class="navbar color-primario px-2 sticky-top">
         <div class="container-fluid d-flex justify-content-between align-items-center">
 
-            
+            <!-- Logo -->
             <div class="d-flex align-items-center">
                 <img src="/img/logo/logo.png" class="logo-navbar me-2" alt="Logo">
                 <span class="titulo-nav fw-bold">PECADOS PLACENTEROS</span>
             </div>
 
+            <!-- Botón inicio de sesion -->
+             <a href="#" class="text-white text-decoration-none d-block me-2" data-bs-toggle="modal"
+                data-bs-target="#modalUsuario">
+                <i class="bi bi-person-circle fs-2"></i>
+            </a>
             
-            <button class="btn text-white fs-3" id="btnMenu">☰</button>
         </div>
     </nav>
-
-    
-    <aside id="sidebar">
-        <ul>
-            <li><a href="/clientes/PaginaPrincipal/clientes-Principal.html">PAGINA PRINCIPAL</a></li>
-            <li><a href="/clientes/catalogo-de-clientes/index.html">CARRITO</a></li>
-            <li><a href="">PERFIL</a></li>
-
-        </ul>
-    </aside>
 
    
 
@@ -134,7 +128,7 @@
                 <a href="#promociones" class="color-primario rounded-pill px-5 py-3 text-white text-decoration-none">
                     PROMOCIONES
                 </a>
-                <a href="/clientes/catalogo-de-clientes/index.html"
+                <a href="catalogo-de-inicio/index.html"
                     class="color-primario rounded-pill px-5 py-3 text-white text-decoration-none">
                     CATÁLOGO
                 </a>
@@ -150,7 +144,7 @@
                     <div class="card">
                         <img src="/img/platos//hamburguesa-04.avif" alt="Producto" class="card-img-top">
                         <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Ved’ma</h5>
+                            <h5 class="card-title fw-bold">Producto 1</h5>
                         </div>
                     </div>
                 </div>
@@ -159,7 +153,7 @@
                     <div class="card">
                         <img src="/img/platos//bebida-03.png" alt="Producto" class="card-img-top">
                         <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Tormenta</h5>
+                            <h5 class="card-title fw-bold">Producto 2</h5>
                         </div>
                     </div>
                 </div>
@@ -168,7 +162,7 @@
                     <div class="card">
                         <img src="/img/platos//salchipapa-04.jpg" alt="Producto" class="card-img-top">
                         <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Caos</h5>
+                            <h5 class="card-title fw-bold">Producto 3</h5>
                         </div>
                     </div>
                 </div>
@@ -204,6 +198,33 @@
     </div>
 
 
+    <!-- MODAL USUARIO -->
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3 class="modal-title fw-bold">Bienvenido</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p class="mb-4 fs-5 fw-semibold">Accede a tu cuenta o crea una nueva</p>
+
+                    <div class="d-grid gap-3">
+                        <a href="/ambos/inicio de sesion/index.html" class="btn btn-primary color-primario">
+                            Iniciar sesión
+                        </a>
+
+                        <a href="/ambos/registro/index.html" class="btn btn-outline-primary">
+                            Registrarse
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
