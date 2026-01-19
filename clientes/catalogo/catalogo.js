@@ -1,3 +1,5 @@
+let productoActual = null;
+
 function crearCardProducto(producto) {
     return `
     <div class="col-12 col-lg-6">
@@ -27,7 +29,7 @@ function crearCardProducto(producto) {
                         ${producto.descripcion}
                     </p>
 
-                    <button class="btn btn-dark rounded-pill px-4"
+                    <button class="btnAgregarCarrito btn btn-dark rounded-pill px-4"
                         data-id="${producto.id}">
                         Agregar
                     </button>
@@ -38,7 +40,7 @@ function crearCardProducto(producto) {
 }
 
 
-function renderCategoria(lista, contenedorId) {
+function categoriaMostrar(lista, contenedorId) {
     const contenedor = document.getElementById(contenedorId);
     contenedor.innerHTML = "";
 
@@ -50,14 +52,14 @@ function renderCategoria(lista, contenedorId) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    renderCategoria(menu.hamburguesas, "contenedor-hamburguesas");
-    renderCategoria(menu.perros_calientes, "contenedor-perros");
-    renderCategoria(menu.pizzas, "contenedor-pizzas");
-    renderCategoria(menu.bebidas, "contenedor-bebidas");
-    renderCategoria(menu.postres, "contenedor-postres");
-    renderCategoria(menu.picadas, "contenedor-picadas");
-    renderCategoria(menu.carnes, "contenedor-carnes");
-    renderCategoria(menu.salchipapas, "contenedor-salchipapas");
+    categoriaMostrar(menu.hamburguesas, "contenedor-hamburguesas");
+    categoriaMostrar(menu.perros_calientes, "contenedor-perros");
+    categoriaMostrar(menu.pizzas, "contenedor-pizzas");
+    categoriaMostrar(menu.bebidas, "contenedor-bebidas");
+    categoriaMostrar(menu.postres, "contenedor-postres");
+    categoriaMostrar(menu.picadas, "contenedor-picadas");
+    categoriaMostrar(menu.carnes, "contenedor-carnes");
+    categoriaMostrar(menu.salchipapas, "contenedor-salchipapas");
 
 });
 
@@ -68,6 +70,8 @@ function buscarProductoPorId(id) {
 }
 
 function abrirModalProducto(producto) {
+
+    productoActual = producto;
 
     // TITULO
     document.getElementById("modalProductoTitulo").textContent = producto.nombre;
@@ -91,7 +95,7 @@ function abrirModalProducto(producto) {
     // CERVEZA
     if (producto.opciones) {
         contenedorOpciones.innerHTML += crearSeccionOpciones(
-            "Elige una opción",
+            "Cerveza",
             producto.opciones,
             "radio"
         );
@@ -132,6 +136,27 @@ function abrirModalProducto(producto) {
     modal.show();
 }
 
+function crearSeccionOpciones(titulo, opciones, tipo = "checkbox") {
+    return `
+        <div class="mb-4">
+            <h6 class="fw-bold mb-3">${titulo}</h6>
+
+            <div class="d-grid gap-2">
+                ${opciones.map(opcion => `
+                    <label class="d-flex align-items-center justify-content-between border rounded-3 px-3 py-2">
+                        <span>${opcion}</span>
+                        <input
+                            class="form-check-input ms-3"
+                            type="${tipo}"
+                            name="${titulo}"
+                            value="${opcion}">
+                    </label>
+                `).join("")}
+            </div>
+        </div>
+    `;
+}
+
 
 document.addEventListener("click", function (e) {
 
@@ -149,24 +174,32 @@ document.addEventListener("click", function (e) {
 });
 
 
+function obtenerOpcionesSeleccionadas() {
+    const opciones = {};
 
-function crearSeccionOpciones(titulo, opciones, tipo = "checkbox") {
-    return `
-        <div class="mb-4">
-            <h6 class="fw-bold mb-3">${titulo}</h6>
+    document.querySelectorAll("#modalOpciones h6").forEach(seccion => {
+        const titulo = seccion.textContent;
+        const inputs = seccion.nextElementSibling.querySelectorAll("input:checked");
 
-            <div class="d-grid gap-2">
-                ${opciones.map((opcion, index) => `
-                    <label class="d-flex align-items-center justify-content-between border rounded-3 px-3 py-2">
-                        <span>${opcion}</span>
-                        <input 
-                            class="form-check-input ms-3"
-                            type="${tipo}"
-                            name="${titulo}"
-                            value="${opcion}">
-                    </label>
-                `).join("")}
-            </div>
-        </div>
-    `;
-};
+        if (inputs.length > 0) {
+            opciones[titulo] = Array.from(inputs).map(i => i.value);
+        }
+    });
+
+    return opciones;
+}
+
+
+document.getElementById("btnAgregarCarrito").addEventListener("click", () => {
+
+    if (!productoActual) return;
+
+    const opcionesSeleccionadas = obtenerOpcionesSeleccionadas();
+
+    agregarAlCarrito(productoActual, opcionesSeleccionadas);
+
+    // CIERRA MODAL (ayuda)
+    bootstrap.Modal.getInstance(
+        document.getElementById("modalProducto")
+    ).hide();
+});

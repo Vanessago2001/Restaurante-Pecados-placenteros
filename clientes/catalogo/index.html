@@ -44,8 +44,8 @@
         <ul>
             <li><a href="/clientes/PaginaPrincipal/clientes-Principal.html">PAGINA PRINCIPAL</a></li>
             <li><a href="../catalogo/index.html">CATALOGO</a></li>
-            <!-- <li><a href="#">FACTURA POS</a></li>
-            <li><a href="#">GASTOS</a></li>
+            <li><a href="../carrito/carrito.html">CARRO DE COMPRAS</a></li>
+            <!-- <li><a href="#">GASTOS</a></li>
             <li><a href="#">TURNOS</a></li>
             <li><a href="#">INVENTARIO</a></li>
             <li><a href="#">PERFIL</a></li>
@@ -86,9 +86,9 @@
 
 
     <!-- CONTENEDOR PRINCIPAL -->
-    <div class="containe my-4">
+    <div class="my-4">
 
-        <section id="hamburguesas" class="container-fluid my-5 px-5" >
+        <section id="hamburguesas" class="container-fluid my-5 px-5">
             <div class="card border-0 shadow-lg rounded-4 p-4">
                 <h2 class="fw-bold mb-4">Hamburguesas</h2>
                 <div class="row g-4" id="contenedor-hamburguesas"></div>
@@ -184,7 +184,7 @@
                     <button class="btn btn-outline-danger rounded-pill" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button class="btn rounded-pill px-4 color-primario-catalogo text-white">
+                    <button id="btnAgregarCarrito" class="btn rounded-pill px-4 color-primario-catalogo text-white">
                         Agregar
                     </button>
                 </div>
@@ -203,6 +203,10 @@
 
     <script src="/estilo-global/menu.js"></script>
 
+    <script src="../carrito/carrito.js"></script>
+
+    <script src="../catalogo/catalogo.js"></script>
+
 </body>
- 
-</head>
+
+</html>
