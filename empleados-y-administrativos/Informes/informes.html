@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informes</title>
+    <link rel="icon" type="image/png" href="/img/fonfo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+
+    <nav class="navbar color-primario px-2 fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+            <div class="d-flex align-items-center">
+                <img src="../img/logo.png" class="logo-navbar me-2" alt="Logo">
+                <span class="titulo-nav fw-bold">PECADOS PLACENTEROS</span>
+            </div>
+
+            <button class="btn text-white fs-3" id="btnMenu">☰</button>
+        </div>
+    </nav>
+
+    <aside id="sidebar">
+        <ul>
+            <li><a href="#">PEDIDOS</a></li>
+            <li><a href="#">RESERVAS</a></li>
+            <li><a href="#">FACTURA POS</a></li>
+            <li><a href="#">GASTOS</a></li>
+            <li><a href="#">TURNOS</a></li>
+            <li><a href="#">INVENTARIO</a></li>
+            <li><a href="#">PERFIL</a></li>
+            <li><a href="#">INFORMES</a></li>
+            <li><a href="#">EMPLEADOS</a></li>
+        </ul>
+    </aside>
+
+    <div class="container my-5">
+
+        <div class="mb-4">
+            <h2 class="fw-bold">Informes</h2>
+            <p class="text-muted">Consulta las estadísticas y reportes del sistema</p>
+        </div>
+
+        
+        <div class="row g-4">
+
+            
+            <div class="col-md-6">
+                <div class="card card-informe">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="icono bg-warning text-white">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="ms-3 flex-grow-1">
+                            <h5 class="mb-1">Informe de Ventas</h5>
+                            <p class="text-muted mb-2">
+                                Consulta estadísticas de ventas y ganancias.
+                            </p>
+                            <a href="informev.html">
+                                <button class="btn btn-primary btn-sm">
+                                Ver Reporte →
+                            </button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-md-6">
+                <div class="card card-informe">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="icono bg-success text-white">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <div class="ms-3 flex-grow-1">
+                            <h5 class="mb-1">Informe de Turnos</h5>
+                            <p class="text-muted mb-2">
+                                Consulta las horas trabajadas y turnos de los empleados.
+                            </p>
+                            
+                            <a href="informeT.html"><button class="btn btn-primary btn-sm" >
+                                Ver Reporte →
+                            </button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="col-md-6">
+                <div class="card card-informe">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="icono bg-primary text-white">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <div class="ms-3 flex-grow-1">
+                            <h5 class="mb-1">Informe de Reservas</h5>
+                            <p class="text-muted mb-2">
+                                Consulta el estado y número de reservas realizadas.
+                            </p>
+
+                            <a href="informeR.html"><button class="btn btn-primary btn-sm" >
+                                Ver Reporte →
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-informe">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="icono bg-info text-white">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="ms-3 flex-grow-1">
+                            <h5 class="mb-1">Informe de Empleados</h5>
+                            <p class="text-muted mb-2">
+                                Consulta el desempeño y datos de los empleados.
+                            </p>
+                            <a href="informeE.html"><button class="btn btn-primary btn-sm" >
+                                Ver Reporte →
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menu.js"></script>
+    <script src="informes/informes.js"></script>
+
+</body>
+
+</html>
