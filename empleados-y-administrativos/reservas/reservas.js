@@ -6,7 +6,8 @@ let mesas = [
     { id: 5, estado: "ocupada" },
     { id: 6, estado: "disponible" },
     { id: 7, estado: "disponible" },
-    { id: 8, estado: "disponible" }
+    { id: 8, estado: "disponible" },
+    { id: 9, estado: "disponible" }
 ];
 
 function mostrarMesas() {
@@ -15,7 +16,7 @@ function mostrarMesas() {
 
     mesas.forEach(mesa => {
         contenedor.innerHTML += `
-            <div class="col-3 mb-3 text-center">
+            <div class= "col-12 col-md-6 col-lg-4 mb-2 text-center">
                 <div class="mesa ${mesa.estado}">
                     Mesa ${mesa.id}
                 </div>
@@ -43,16 +44,6 @@ function confirmarReserva() {
         return;
     }
 
-    document.getElementById("tablaReservas").innerHTML += `
-        <tr>
-            <td>Mesa ${mesaSeleccionada}</td>
-            <td>${fecha}</td>
-            <td>${hora}</td>
-            <td>${personas}</td>
-            <td>${telefono}</td>
-        </tr>
-    `;
-
     const mesa = mesas.find(m => m.id === mesaSeleccionada);
     mesa.estado = "ocupada";
 
@@ -61,11 +52,14 @@ function confirmarReserva() {
     bootstrap.Modal
         .getInstance(document.getElementById("modalReserva"))
         .hide();
+
+    alert("Reserva confirmada");    
+
 }
 
 function cargarMesasDisponibles() {
     const select = document.getElementById("mesaSelect");
-    select.innerHTML = "<option value="">Seleccione una mesa</option>";
+    select.innerHTML = '<option value="">Seleccione una mesa</option>';
 
     mesas.forEach(mesa => {
         if (mesa.estado === "disponible") {
