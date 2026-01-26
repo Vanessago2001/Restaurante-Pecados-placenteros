@@ -63,49 +63,472 @@
   padding: 20px;
 }
 
-/* =========================
-   MESAS
-========================= */
+/* ======================
+   Reservas clientes
+======================= */
+
 .mesa {
-  border: 2px solid #333;
-  border-radius: 10px;
-  padding: 25px;
-  background-color: #f8f9fa;
-  cursor: pointer;
-  transition: 0.3s;
+    background: linear-gradient(145deg, #3f4a3c, #2e372c);
+    border-radius: 18px;
+    color: #f5f5f5;
+    padding: 26px 0;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    user-select: none;
+    width: 100%;
+    max-width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.mesa:hover {
-  transform: scale(1.05);
+.mesa.disponible {
+    background: linear-gradient(145deg, #4a5a47, #364437);
 }
 
 .mesa.ocupada {
-  background-color: #dc3545;
-  color: white;
-  cursor: not-allowed;
+    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    color: #bcbcbc;
+    cursor: not-allowed;
 }
 
-.mesa.seleccionada {
-  border: 3px solid #334691;
-  background-color: #cfe2ff;
+.mesa::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
 }
 
-/* =========================
-   RESERVAS
-========================= */
+.mesa:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 26px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.mesa.ocupada:hover {
+    transform: none;
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+/*===========================
+   Reservas empleados
+========================== */
+
 .header-reservas {
-  color: black;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 4px;
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .header-reservas h4 {
-  margin: 0;
-  font-size: 26px;
-  font-weight: 600;
-  margin-left: 120px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
+
+/* BOTONES */
+.btn-crear {
+    color: #fff;
+    border-radius: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.btn-confirmar {
+    background: linear-gradient(145deg, #6c9a8b, #557f73);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+}
+
+/* CARD */
+.card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* TABLA */
+table th {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table td {
+    font-size: 14px;
+}
+
+
+
+/* ===============================
+    PÁGINA PRINCIPAL DE INFORMES
+================================= */
+
+.card-informe {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    height: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===================
+   Informe de ventas
+==================== */
+
+/*  TARJETAS  */
+.card-informe {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.grafica-vertical {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 250px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.columna {
+    width: 12%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.barra-vertical {
+    width: 100%;
+    background-color: #334691;
+    border-radius: 10px 10px 0 0;
+}
+
+/* ALTURAS */
+.h-40 .barra-vertical {
+    height: 40%;
+}
+
+.h-50 .barra-vertical {
+    height: 50%;
+}
+
+.h-55 .barra-vertical {
+    height: 55%;
+}
+
+.h-60 .barra-vertical {
+    height: 60%;
+}
+
+.h-65 .barra-vertical {
+    height: 65%;
+}
+
+.h-70 .barra-vertical {
+    height: 70%;
+}
+
+.h-80 .barra-vertical {
+    height: 80%;
+}
+
+.columna span {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.grafica-circular {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: auto;
+    background: conic-gradient(#334691 0% 50%,
+            #5cb85c 50% 70%,
+            #f0ad4e 70% 100%);
+}
+
+/*  LEYENDA*/
+.color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.color-1 {
+    background: #334691;
+}
+
+.color-2 {
+    background: #5cb85c;
+}
+
+.color-3 {
+    background: #f0ad4e;
+}
+
+/* =========================
+5.2 Informe de Reservas
+===========================*/
+.grafica-vertical {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 220px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.columna {
+    width: 12%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.barra-vertical {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Color específico reservas */
+.barra-reservas {
+    background-color: #0d6efd;
+}
+
+/* ALTURAS */
+.h-35 .barra-vertical {
+    height: 35%;
+}
+
+.h-40 .barra-vertical {
+    height: 40%;
+}
+
+.h-45 .barra-vertical {
+    height: 45%;
+}
+
+.h-55 .barra-vertical {
+    height: 55%;
+}
+
+.h-60 .barra-vertical {
+    height: 60%;
+}
+
+.h-70 .barra-vertical {
+    height: 70%;
+}
+
+.h-80 .barra-vertical {
+    height: 80%;
+}
+
+.columna span {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.grafica-circular-reservas {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: auto;
+    background: conic-gradient(#198754 0% 60%,
+            #ffc107 60% 85%,
+            #dc3545 85% 100%);
+}
+
+/* LEYENDA */
+.color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.color-confirmada {
+    background: #198754;
+}
+
+.color-pendiente {
+    background: #ffc107;
+}
+
+.color-cancelada {
+    background: #dc3545;
+}
+
+
+/*===========================
+5.3 Reserva de turnos
+===========================*/
+
+.grafica-vertical {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 220px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.columna {
+    width: 12%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.barra-vertical {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.barra-turnos {
+    background-color: #6f42c1;
+}
+
+/* ALTURAS */
+.h-45 .barra-vertical {
+    height: 45%;
+}
+
+.h-50 .barra-vertical {
+    height: 50%;
+}
+
+.h-55 .barra-vertical {
+    height: 55%;
+}
+
+.h-60 .barra-vertical {
+    height: 60%;
+}
+
+.h-65 .barra-vertical {
+    height: 65%;
+}
+
+.h-70 .barra-vertical {
+    height: 70%;
+}
+
+.h-80 .barra-vertical {
+    height: 80%;
+}
+
+.columna span {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.grafica-circular-turnos {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: auto;
+    background: conic-gradient(#198754 0% 70%,
+            #ffc107 70% 90%,
+            #dc3545 90% 100%);
+}
+
+.color-activo {
+    background: #198754;
+}
+
+.color-pendiente {
+    background: #ffc107;
+}
+
+.color-cancelado {
+    background: #dc3545;
+}
+
+/*===========================
+   5.4 INFORME DE EMPLEADOS
+============================ */
+
+.filtros {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.btn-filtro {
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-filtro.activo {
+    background-color: #28a745;
+}
+
+.btn-filtro.vacaciones {
+    background-color: #fd7e14;
+}
+
+.btn-filtro.retirado {
+    background-color: #dc3545;
+}
+
+.lista-empleados {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.empleado {
+    background: #f2f2f2;
+    padding: 12px 16px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.empleado .nombre {
+    font-weight: 600;
+}
+
+.empleado small {
+    color: #555;
