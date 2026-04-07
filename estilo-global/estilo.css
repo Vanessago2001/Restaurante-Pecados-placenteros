@@ -63,67 +63,6 @@
   padding: 20px;
 }
 
-/* ======================
-   Reservas clientes
-======================= */
-
-.mesa {
-    background: linear-gradient(145deg, #3f4a3c, #2e372c);
-    border-radius: 18px;
-    color: #f5f5f5;
-    padding: 26px 0;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    user-select: none;
-    width: 100%;
-    max-width: 200px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.mesa.disponible {
-    background: linear-gradient(145deg, #4a5a47, #364437);
-}
-
-.mesa.ocupada {
-    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
-    color: #bcbcbc;
-    cursor: not-allowed;
-}
-
-.mesa::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    pointer-events: none;
-}
-
-.mesa:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 12px 26px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.mesa.ocupada:hover {
-    transform: none;
-    box-shadow:
-        0 6px 14px rgba(0, 0, 0, 0.35);
-}
 
 /*===========================
    Reservas empleados
@@ -134,6 +73,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .header-reservas h4 {
@@ -531,4 +471,7 @@ table td {
 }
 
 .empleado small {
-    color: #555;}
+    color: #555;
+}
+
+
