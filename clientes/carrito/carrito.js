@@ -56,7 +56,7 @@ function carritoMostrar() {
 
                     <!-- IMAGEN -->
                     <div class="col-3 col-md-2">
-                        <img src="${item.imagen}" class="img-fluid rounded">
+                        <img src="../../${item.imagen}" class="img-fluid rounded">
                     </div>
 
                     <!-- INFO -->

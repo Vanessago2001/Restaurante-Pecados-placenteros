@@ -8,7 +8,7 @@ function crearCardProducto(producto) {
 
                 <!-- Imagen -->
                 <div class="col-auto">
-                    <img src="${producto.imagen}"
+                    <img src="../../${producto.imagen}"
                         class="img-fluid"
                         style="width:120px; object-fit:contain;"
                         alt="${producto.nombre}">
@@ -92,7 +92,7 @@ function abrirModalProducto(producto) {
     document.getElementById("modalProductoTitulo").textContent = producto.nombre;
 
     // IMAGEN
-    document.getElementById("modalProductoImagen").src =  producto.imagen;
+    document.getElementById("modalProductoImagen").src = "../../" + producto.imagen;
 
     // PRECIO
     document.getElementById("modalProductoPrecio").textContent =
