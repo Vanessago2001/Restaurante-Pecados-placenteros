@@ -32,9 +32,6 @@ selectNombre.addEventListener("change", () => {
     selectNit.value = selectNombre.value;
 });
 
-selectNit.addEventListener("change", () => {
-    selectNombre.value = selectNit.value;
-});
 
 selectNit.addEventListener("change", () => {
     if (selectNit.value === "nuevo") {
@@ -45,14 +42,16 @@ selectNit.addEventListener("change", () => {
     selectNombre.value = selectNit.value;
 });
 
-selectNit.addEventListener("change", () => {
-    selectNit.value = selectNombre.value;
-});
 
 /* Agregar tercero solo si NO existe */
 function agregarTercero() {
     const nombre = document.getElementById("nuevoNombre").value.trim();
     const nit = document.getElementById("nuevoNit").value.trim();
+
+    if (!nombre || !nit) {
+        alert("Debes completar nombre y NIT");
+        return;
+    }
 
     const existe = terceros.some(
         t => t.nombre.toLowerCase() === nombre.toLowerCase() || t.nit == nit
@@ -62,7 +61,7 @@ function agregarTercero() {
         alert("El tercero ya existe");
         return;
     }
-
+    
     terceros.push({ nombre, nit });
     cargarTerceros();
 

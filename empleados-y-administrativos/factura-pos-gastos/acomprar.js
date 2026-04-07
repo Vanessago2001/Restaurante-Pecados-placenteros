@@ -22,6 +22,7 @@ function crearOpcionesInventario() {
 // ============================
 const tablaFactura = document.getElementById("tablaFacturadeCompra");
 const btnAgregarFila = document.getElementById("agregarFila");
+const btnGuardar = document.getElementById("btnGuardar");
 
 const subtotalGeneral = document.getElementById("subtotalGeneral");
 const ivaGeneral = document.getElementById("ivaGeneral");
@@ -35,29 +36,23 @@ function agregarFila() {
 
   fila.innerHTML = `
     <td>${contador++}</td>
-
     <td>
       <select class="form-select ingrediente">
         ${crearOpcionesInventario()}
       </select>
     </td>
-
     <td>
       <input type="number" class="form-control cantidadCompra" min="1">
     </td>
-
     <td>
       <input type="number" class="form-control valorUnitario">
     </td>
-
     <td>
       <input class="form-control iva" readonly>
     </td>
-
     <td>
       <input class="form-control total" readonly>
     </td>
-
     <td>
       <input class="form-control promedio" readonly>
     </td>
@@ -67,7 +62,7 @@ function agregarFila() {
 }
 
 // ============================
-// EVENTO INPUT TABLA
+// CALCULAR IVA POR FILA
 // ============================
 tablaFactura.addEventListener("input", (e) => {
   const fila = e.target.closest("tr");
@@ -89,33 +84,49 @@ tablaFactura.addEventListener("input", (e) => {
   calcularTotalesGenerales();
 });
 
-// es el momento en el que se actualiza el promedio
+// ============================
+// GUARDAR FACTURA
+// ============================
+btnGuardar.addEventListener("click", guardarFactura);
 
-tablaFactura.addEventListener("change", (e) => {
-  const fila = e.target.closest("tr");
-  if (!fila) return;
+function guardarFactura() {
+  let factura = [];
 
-  const select = fila.querySelector(".ingrediente");
-  if (select.value === "") return;
+  document.querySelectorAll("#tablaFacturadeCompra tr").forEach(fila => {
+    const select = fila.querySelector(".ingrediente");
+    if (select.value === "") return;
 
-  const ingrediente = inventario[select.value];
+    const ingrediente = inventario[select.value];
+    const cantidad = Number(fila.querySelector(".cantidadCompra").value || 0);
+    const valor = Number(fila.querySelector(".valorUnitario").value || 0);
 
-  const cantidad = Number(fila.querySelector(".cantidadCompra").value || 0);
-  const valor = Number(fila.querySelector(".valorUnitario").value || 0);
+    if (cantidad <= 0 || valor <= 0) return;
 
-  if (cantidad <= 0 || valor <= 0) return;
+    // actualizar inventario SOLO AQUÍ
+    actualizarInventario(ingrediente, cantidad, valor);
 
-  actualizarInventario(ingrediente, cantidad, valor);
+    // actualizar promedio visual
+    fila.querySelector(".promedio").value =
+      `$${ingrediente.costoPromedio.toFixed(2)}`;
 
-  fila.querySelector(".promedio").value =
-    `$${ingrediente.costoPromedio.toFixed(2)}`;
-});
+    factura.push({
+      ingrediente: ingrediente.nombre,
+      cantidad,
+      valor,
+      iva: fila.querySelector(".iva").value,
+      total: fila.querySelector(".total").value,
+      promedio: ingrediente.costoPromedio
+    });
+  });
 
+  localStorage.setItem("facturaCompra", JSON.stringify(factura));
 
-
+  alert("Factura guardada correctamente ✅");
+  window.location.href = "factura-de-compra.html";
+}
 
 // ============================
-// ACTUALIZAR COSTO PROMEDIO
+// ACTUALIZAR INVENTARIO
 // ============================
 function actualizarInventario(ingrediente, cantidadNueva, costoUnitario) {
   const stockAnterior = ingrediente.cantidad;
@@ -131,7 +142,6 @@ function actualizarInventario(ingrediente, cantidadNueva, costoUnitario) {
 
   ingrediente.cantidad = nuevoStock;
 }
-
 
 // ============================
 // TOTALES GENERALES

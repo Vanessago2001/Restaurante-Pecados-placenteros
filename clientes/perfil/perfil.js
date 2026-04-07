@@ -30,3 +30,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     pedidoCliente.innerHTML = html;
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const nombre = document.getElementById("nombreCliente");
+    const correo = document.getElementById("correoCliente");
+    const telefono = document.getElementById("telefonoCliente");
+    const mesa = document.getElementById("mesaCliente");
+    const btnEditar = document.getElementById("btnEditar");
+
+    let editando = false;
+
+    btnEditar.addEventListener("click", function () {
+        editando = !editando;
+
+        nombre.disabled = !editando;
+        correo.disabled = !editando;
+        telefono.disabled = !editando;
+        mesa.disabled = !editando;
+
+        if (editando) {
+            btnEditar.textContent = "Guardar cambios";
+            btnEditar.classList.remove("btn-outline-primary");
+            btnEditar.classList.add("btn-success");
+        } else {
+            const cliente = {
+                nombre: nombre.value,
+                correo: correo.value,
+                telefono: telefono.value,
+                mesa: mesa.value
+            };
+
+            localStorage.setItem("clientePerfil", JSON.stringify(cliente));
+
+            btnEditar.textContent = "Editar información";
+            btnEditar.classList.remove("btn-success");
+            btnEditar.classList.add("btn-outline-primary");
+
+            alert("Información actualizada correctamente ✅");
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const datosGuardados = JSON.parse(localStorage.getItem("clientePerfil"));
+
+    if (datosGuardados) {
+        document.getElementById("nombreCliente").value = datosGuardados.nombre;
+        document.getElementById("correoCliente").value = datosGuardados.correo;
+        document.getElementById("telefonoCliente").value = datosGuardados.telefono;
+        document.getElementById("mesaCliente").value = datosGuardados.mesa;
+    }
+});
